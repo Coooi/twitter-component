@@ -1,0 +1,33 @@
+@import "vendor";
+@import "hide";
+@import "mixins";
+@import "variables";
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    @media #{$medium-and-down} {
+        overflow-x: hidden;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: $regular;
+}
+h3 {
+    margin-top: 0;
+    text-align: center;
+    font-weight: $thin;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+p {
+    margin: 0 !important;
+}
+
+@import "twitter";

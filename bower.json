@@ -1,0 +1,21 @@
+{
+  "name": "twitter-component",
+  "description": "Marco Nascimento's.",
+  "main": "",
+  "authors": [
+    "Marco Nascimento"
+  ],
+  "license": "coooi",
+  "homepage": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "socket.io-client": "^1.4.8",
+    "moment": "^2.14.1"
+  }
+}

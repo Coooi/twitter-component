@@ -1,0 +1,48 @@
+<section class="container container--main">
+
+
+    <div id="tweets-list" class="col-sm-6 col-sm-offset-3 col-xs-12 nopadding">
+
+        <div class="list">
+            <div class="list__header">
+                <div class="col-xs-12 nopadding">
+                    <label class="hash-tag-label">#</label><input class="twitter-input" ng-disabled="!vm.firstRequest" ng-model="vm.hashtag" placeholder="Type a hashtag" type="text"/>
+                </div>
+                <div class="col-xs-12 nopadding">
+                    <button type="button" class="twitter-button stop-button" ng-click="vm.clearTweets()">Clear</button>
+                    <button type="button" class="twitter-button" ng-click="vm.findTweets()" ng-class="{'stop-button': vm.isCasting}">{{vm.buttonText}}</button>
+                </div>
+
+                <div class="col-xs-12 nopadding list__title">
+                    <span>Tweets</span>
+                </div>
+
+
+            </div>
+            <div class="list__body col-xs-12 nopadding">
+                <ul>
+                    <li ng-repeat="tweet in vm.tweets | reverse track by $index">
+                        <div class="tweet-item">
+                            <div class="tweet__avatar">
+                                <img ng-src="{{tweet.avatar}}" alt="">
+                                    <span class="tweet__author">{{tweet.author}}</span>
+                                    <span class="tweet__user">@{{tweet.screenname}}</span>
+                                    <span class="tweet__date"> - {{tweet.date | format:'fromNow':true }}</span>
+                            </div>
+                            <div class="tweet__body">
+                                <p>{{tweet.body}}</p>
+                            </div>
+
+
+
+
+                            <hr>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
