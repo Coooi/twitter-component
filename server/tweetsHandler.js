@@ -8,7 +8,6 @@ module.exports = function(io, stream){
     var firstConnection         = true;
 
 
-    //Handle Twitter events
     stream.on(CONNECT, function(request) {
         console.log('Connected to Twitter API');
 
@@ -35,18 +34,14 @@ module.exports = function(io, stream){
             date: tweet.created_at,
             screenname: tweet.user.screen_name
         };
-        // console.log(tweet);
 
         tweetsBuffer.push(tweetObject);
-
         emitTweets();
     });
 
     var emitTweets = function() {
-        //send buffer only if full
         if (tweetsBuffer.length >= TWEETS_MAX_BUFFER_SIZE) {
             io.sockets.emit(TWEETS_EVENT, tweetsBuffer);
-
             tweetsBuffer = [];
         }
     }

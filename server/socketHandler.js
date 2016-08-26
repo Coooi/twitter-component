@@ -1,12 +1,12 @@
-module.exports = function(io, stream){
-    var START_EVENT             = 'tweet-io:start';
-    var STOP_EVENT              = 'tweet-io:stop';
-    var DISCONNECT              = 'disconnect';
-    var CONNECTION              = 'connection';
-    var openSockets             = 0;
+module.exports = function (io, stream) {
+    var START_EVENT = 'tweet-io:start';
+    var STOP_EVENT  = 'tweet-io:stop';
+    var DISCONNECT  = 'disconnect';
+    var CONNECTION  = 'connection';
+    var openSockets = 0;
 
     //Handle Socket.IO events
-    var removeClient = function() {
+    var removeClient = function () {
         console.log('Client disconnected !');
         openSockets--;
 
@@ -17,7 +17,7 @@ module.exports = function(io, stream){
         }
     };
 
-    var addClient = function(data, socket) {
+    var addClient = function (data, socket) {
         if (data == true) {
             console.log('Client connected !');
 
@@ -31,9 +31,9 @@ module.exports = function(io, stream){
         }
     };
 
-    io.sockets.on(CONNECTION, function(socket) {
+    io.sockets.on(CONNECTION, function (socket) {
 
-        socket.on(START_EVENT, function(data) {
+        socket.on(START_EVENT, function (data) {
             addClient(data, socket);
         });
 

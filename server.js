@@ -37,10 +37,8 @@ app.get('/', function (req, res) {
 
 var server = http.createServer(app).listen(port, function() {
     console.log('Express server running. Port: ' + port);
-});// Create a new ntwitter instance with credentials
+});
 
-
-// exports.io = io;
 var io = require('socket.io').listen(server);
 
 app.put('/update-stream', function (req, res) {

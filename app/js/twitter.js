@@ -2,14 +2,12 @@ function TwitterCtrl($scope, socket, ApiServices, $timeout, $log) {
 
     var vm = this;
 
-
     vm.tweets = [];
     vm.isCasting = false;
     vm.buttonText = "Get Tweets";
     vm.hashtag = "";
     vm.stop = false;
     vm.firstRequest = true;
-
 
     function toggleCasting() {
         vm.isCasting = !vm.isCasting;
@@ -26,10 +24,7 @@ function TwitterCtrl($scope, socket, ApiServices, $timeout, $log) {
                 vm.stop = true;
                 socket.emit('connect', true);
             }
-
             socket.emit('tweet-io:start', true);
-
-
             socket.on('tweet-io:tweets', function (data) {
                 vm.tweets = vm.tweets.concat(data);
             });
@@ -58,7 +53,6 @@ function TwitterCtrl($scope, socket, ApiServices, $timeout, $log) {
                 vm.buttonText = "Get Tweets";
             }, 300);
         }
-
     };
 }
 
