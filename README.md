@@ -4,12 +4,11 @@
 * Author: Marco Nascimento
 
 ### About ###
-Responsive layout mailbox component built with AngularJS.
+Responsive layout twitter component built with AngularJS 1.5.
 
 ### Working URL ###
-https://askcharlie-mailbox.herokuapp.com/
+https://twitter-component.herokuapp.com/
 
-**Mock data url:** http://www.mocky.io/v2/57b0ec43260000be273d28a5
 
 ### Installation ###
 
@@ -17,29 +16,22 @@ https://askcharlie-mailbox.herokuapp.com/
 * Go to the project's folder on the terminal.
 * Run 
 ```
-#!shell
 
 npm install
 ```
 * Run 
 ```
-#!shell
 
 gulp run
 ```
 * The system will run on **localhost:5000**
 
-* The componente will be rendered from the component tag in the HTML file:
+* The component will be rendered from the component tag in the HTML file:
 
 ```
-#!shell
-<mailbox url="'emails'"></mailbox>
+<twitter-view></twitter-view>
 
 ```
-
-* The attribute **url** represents the path where the component will be fetching email data.
-
-
 
 ### Tech stack ###
 
@@ -54,7 +46,7 @@ gulp run
 ### Notes ###
 
 * No unit tests included.
-* JSON file available on the server side.
+* Only 1 hashtag is allowed per page access.
 
 ### Contact ###
 

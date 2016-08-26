@@ -37,7 +37,7 @@
                 },
                 emit: function (eventName, data, callback) {
                     if (!socket && eventName === 'connect') {
-                        socket = io.connect('https://twitter-component.herokuapp.com');
+                        socket = io.connect('http://localhost:5000');
                     } else {
                         socket.emit(eventName, data, function () {
                             var args = arguments;
